@@ -6,12 +6,16 @@ PROGRAM OPTIMIZE
 
   REAL(dp) :: a,b,phi,tol
   REAL(dp) :: x,y
+  CHARACTER(100) :: str
 
-  a = -500.0_dp
-  b = 500.0_dp
-  
   phi = (1.0 + SQRT(5.0)) / 2.0
   tol = 1e-6
+
+  CALL getarg(1,str)
+  read (str,'(F10.10)') a
+  
+  CALL getarg(2,str)
+  read (str,'(F10.10)') b
 
   x = solve(a,b,tol)
   y = my_function(x)
@@ -23,7 +27,7 @@ CONTAINS
     IMPLICIT NONE
     REAL(dp) :: x,y
 
-    y = x**2 + sin(x) - x
+    y = x**2 + SIN(x)/x - x
 
   END FUNCTION my_function
 
