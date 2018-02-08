@@ -12,10 +12,10 @@ PROGRAM OPTIMIZE
   tol = 1e-6
 
   CALL getarg(1,str)
-  read (str,'(F10.10)') a
+  READ (str,'(F10.10)') a
   
   CALL getarg(2,str)
-  read (str,'(F10.10)') b
+  READ (str,'(F10.10)') b
 
   x = solve(a,b,tol)
   y = my_function(x)
@@ -23,7 +23,7 @@ PROGRAM OPTIMIZE
 
 CONTAINS
 
-  FUNCTION my_function(x) result(y)
+  FUNCTION my_function(x) RESULT(y)
     IMPLICIT NONE
     REAL(dp) :: x,y
 
@@ -31,7 +31,7 @@ CONTAINS
 
   END FUNCTION my_function
 
-  FUNCTION solve(a,b,tol0) result(ans)
+  FUNCTION solve(a,b,tol0) RESULT(ans)
     IMPLICIT NONE
     REAL(dp),INTENT(inout) :: a,b
     REAL(dp) , INTENT(in) :: tol0
