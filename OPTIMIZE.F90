@@ -23,7 +23,7 @@ CONTAINS
     IMPLICIT NONE
     REAL(dp) :: x,y
 
-    y = x**2 + sin(x)
+    y = x**2 + SIN(x) + log(x)
 
   END FUNCTION my_function
 
