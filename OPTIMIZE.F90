@@ -35,8 +35,6 @@ CONTAINS
 
     c = b - (b - a) / phi
     d = a + (b - a) / phi
-    WRITE (*,*) "aaaaaaaaaa"
-    WRITE(*,*) a,b,c,d
 
     DO WHILE (ABS(c - d) > tol0)
        IF (my_function(c) < my_function(d)) THEN
