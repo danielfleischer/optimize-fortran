@@ -7,8 +7,8 @@ PROGRAM OPTIMIZE
   REAL(dp) :: a,b,phi,tol
   REAL(dp) :: x,y
 
-  a = -5.0_dp
-  b = 5.0_dp
+  a = -500.0_dp
+  b = 500.0_dp
   
   phi = (1.0 + SQRT(5.0)) / 2.0
   tol = 1e-6
@@ -23,7 +23,7 @@ CONTAINS
     IMPLICIT NONE
     REAL(dp) :: x,y
 
-    y = x**2 + SIN(x) + log(x)
+    y = x**2 + sin(x) - x
 
   END FUNCTION my_function
 
